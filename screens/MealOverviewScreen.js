@@ -4,7 +4,7 @@ import { useLayoutEffect } from 'react';
 import MealItem from '../components/MealItem';
 import { MEALS, CATEGORIES } from '../data/dummy-data';
 
-function MealsOverviewScreen({ route, navigation }) {
+function MealOverviewScreen({ route, navigation }) {
   const categoId = route.params.categoryId;
 
   const displayedMeals = MEALS.filter((mealItem) => {
@@ -22,12 +22,14 @@ function MealsOverviewScreen({ route, navigation }) {
   }, [categoId, navigation]);
 
   function renderMealItem(itemData) {
+    const item = itemData.item;
     const mealItemProps = {
-      title: itemData.item.title,
-      imageUrl: itemData.item.imageUrl,
-      duration: itemData.item.duration,
-      complexity: itemData.item.complexity,
-      affordability: itemData.item.affordability,
+      id: item.id,
+      title: item.title,
+      imageUrl: item.imageUrl,
+      duration: item.duration,
+      complexity: item.complexity,
+      affordability: item.affordability,
     };
     return <MealItem {...mealItemProps} />;
   }
@@ -42,7 +44,7 @@ function MealsOverviewScreen({ route, navigation }) {
     </View>
   );
 }
-export default MealsOverviewScreen;
+export default MealOverviewScreen;
 
 const styles = StyleSheet.create({
   container: {
