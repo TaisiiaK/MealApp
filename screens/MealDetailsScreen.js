@@ -1,11 +1,4 @@
-import {
-  Image,
-  View,
-  Text,
-  StyleSheet,
-  ScrollView,
-  Button,
-} from 'react-native';
+import { Image, View, Text, StyleSheet, ScrollView } from 'react-native';
 import { useLayoutEffect } from 'react';
 
 import { MEALS } from '../data/dummy-data';
