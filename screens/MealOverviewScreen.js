@@ -14,7 +14,7 @@ function MealOverviewScreen({ route, navigation }) {
   useLayoutEffect(() => {
     const categoryTitle = CATEGORIES.find(
       (category) => category.id === categoId
-    ).title;
+    )?.title;
 
     navigation.setOptions({
       title: categoryTitle,
@@ -33,7 +33,7 @@ function MealOverviewScreen({ route, navigation }) {
     };
     return <MealItem {...mealItemProps} />;
   }
-
+  console.log('displayedMeals', displayedMeals);
   return (
     <View style={styles.container}>
       <FlatList
